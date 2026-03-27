@@ -204,14 +204,14 @@ function validatePassword() {
   //displays error message if theres errors
   const errorContainer = document.querySelector(".pass-message");
   errorContainer.innerHTML = errorMessage
-  .map(msg -> `<span>${msg}</span><br>`)
+  .map(msg => `<span>${msg}</span><br>`)
   .join("");
 }
 
 //validating confirm password
 function confirmPassword() {
   password1 = document.getElementById("password").value;
-  password2 = document.getElementById("c_password").value;
+  password2 = document.getElementById("confirm").value;
 
   if (password1 !== password2) {
     document.getElementById("password2-error").innerHTML =

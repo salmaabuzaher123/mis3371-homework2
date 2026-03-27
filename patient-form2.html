@@ -54,7 +54,6 @@ Description: This document creates a patient registration form.
             maxlength="30"
             title="Letters, dashes, and apostrophes only"
             pattern= "[a-zA-Z']{1-30}"
-            onblur= "validateFname()"
             required
             />
             <br>
@@ -70,7 +69,6 @@ Description: This document creates a patient registration form.
             maxlength="1"
             title="Letters only"
             pattern= "[a-zA-Z']{0-1}"
-            onblur= "validateMname()"
             />
             <br>
             <span class="error" id="mname-error"></span>
@@ -85,7 +83,6 @@ Description: This document creates a patient registration form.
             maxlength="30"
             title="Letters, dashes, and apostrophes only"
             pattern= "[a-zA-Z']{1-30}"
-            onblur= "validateLname()"
             required
             />
             <br>
@@ -208,7 +205,6 @@ Description: This document creates a patient registration form.
             maxlength="30"
             title="Please enter your city"
             required
-            onblur= "validateCity()"
             />
             <br>
             <span class="error" id="city-error"></span>
@@ -474,7 +470,7 @@ Description: This document creates a patient registration form.
             title="Please enter your password"
             onblur= "validatePassword()"
             oninput= "validatePassword()"
-            onfocus= "validatePasswpord()"
+            onfocus= "validatePassword()"
             />
             </br>
             <span class="error" id="password1-error"></span>

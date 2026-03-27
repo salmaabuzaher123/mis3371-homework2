@@ -58,7 +58,7 @@ function validateSsn() {
 
 //validating zip
 function validateZipcode() {
-    const zipInput = document.getElementById("zcode");
+    const zipInput = document.getElementById("zipcode");
     let zip = zipInput.value.replace(/[^\d-]/g, "");
 
     if (!zip) {

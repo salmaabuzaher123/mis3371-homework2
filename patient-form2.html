@@ -303,6 +303,8 @@ Description: This document creates a patient registration form.
               placeholder=tpmedical@gmail.com
               onblur= "validateEmail()"
               />
+              <br>
+              <span class="error" id="email-error"></span>
             </td>
         </tr>
 
@@ -319,6 +321,8 @@ Description: This document creates a patient registration form.
               placeholder="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               onblur= "validatePhonenum()"
               />
+              <br>
+              <span class="error" id="username-error"></span>
             </td>
         </tr>
 
@@ -455,6 +459,8 @@ Description: This document creates a patient registration form.
             required
             title="Please enter your username"
             />
+            <br>
+            <span class="error" id="username-error"></span>
           </td>
         </tr>
 

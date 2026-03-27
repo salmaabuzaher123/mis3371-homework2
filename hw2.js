@@ -1,8 +1,8 @@
 /*
 Name: Salma Abuzaher
 Date Created: 02/26/2026
-Date Modified: 02/26/2026
-Purpose: JS for Homework 1 Patient Registration Form
+Date Modified: 03/27/2026
+Purpose: JS for Homework 2 Patient Registration Form
 */
 
 //dynamic date code

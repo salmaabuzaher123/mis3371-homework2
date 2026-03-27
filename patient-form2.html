@@ -52,9 +52,13 @@ Description: This document creates a patient registration form.
             name="fname"
             id="fname"
             maxlength="30"
-            title="Please enter your first name"
+            title="Letters, dashes, and apostrophes only"
+            pattern= "[a-zA-Z']{1-30}"
+            onblur= "validateFname()"
             required
             />
+            <br>
+            <span class="error" id="fname-error"></span>
           </td>
         </tr>
         <tr>
@@ -64,8 +68,12 @@ Description: This document creates a patient registration form.
             name="mname"
             id="mname"
             maxlength="1"
-            title="Please enter your middle initial"
+            title="Letters only"
+            pattern= "[a-zA-Z']{0-1}"
+            onblur= "validateMname()"
             />
+            <br>
+            <span class="error" id="mname-error"></span>
           </td>
         </tr>
         <tr>
@@ -75,9 +83,13 @@ Description: This document creates a patient registration form.
             name="lname"
             id="lname"
             maxlength="30"
-            title="Please enter your last name"
+            title="Letters, dashes, and apostrophes only"
+            pattern= "[a-zA-Z']{1-30}"
+            onblur= "validateLname()"
             required
             />
+            <br>
+            <span class="error" id="lname-error"></span>
           </td>
         </tr>
 
@@ -121,8 +133,11 @@ Description: This document creates a patient registration form.
             type="date"
             id="dob"
             name="DOB"
+            onblur="validateDob()"
             required
             />
+            <br>
+            <span class="error" id="dob-error"></span>
           </td>
         </tr>
 
@@ -138,8 +153,11 @@ Description: This document creates a patient registration form.
             name="ssn"
             id="ssn"
             required
-            title="Please enter your social security number"
+            title="Numbers only"
+            onblur= "validateSsn()"
             />
+            <br>
+            <span class="error" id="ssn-error"></span>
           </td>
         </tr>
 
@@ -160,9 +178,12 @@ Description: This document creates a patient registration form.
             name="address1"
             id="address1"
             maxlength="30"
-            title="Please enter your address"
+            title="Letters, dashes, and apostrophes only"
             required
+            onblur= "validateAddress1()"
             />
+            <br>
+            <span class="error" id="address1-errpr"></span>
           </td>
         </tr>
         
@@ -187,7 +208,10 @@ Description: This document creates a patient registration form.
             maxlength="30"
             title="Please enter your city"
             required
+            onblur= "validateCity()"
             />
+            <br>
+            <span class="error" id="city-error"></span>
           </td>
         </tr>
 
@@ -260,10 +284,13 @@ Description: This document creates a patient registration form.
             minlength="5"
             maxlength="10"
             pattern="[0-9]{5}"
-            title="Please enter your zip code"
+            title="Numbers only"
             placeholder=12345
             required
+            onblur= "validateZipcode()"
             />
+            <br>
+            <span class="error" id="zipcode-error"></span>
           </td>
         </tr>
 
@@ -275,8 +302,10 @@ Description: This document creates a patient registration form.
               id="email"
               required
               maxlength="30"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
               title="Please enter your email"
               placeholder=tpmedical@gmail.com
+              onblur= "validateEmail()"
               />
             </td>
         </tr>
@@ -291,7 +320,8 @@ Description: This document creates a patient registration form.
               required
               maxlength="12"
               title="Please enter your phone number"
-              placeholder="123-456-7890"
+              placeholder="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              onblur= "validatePhonenum()"
               />
             </td>
         </tr>
@@ -442,6 +472,12 @@ Description: This document creates a patient registration form.
             maxlength="30"
             required
             title="Please enter your password"
+            onblur= "validatePassword()"
+            oninput= "validatePassword()"
+            onfocus= "validatePasswpord()"
+            />
+            </br>
+            <span class="error" id="password1-error"></span>
           </td>
         </tr>
 
@@ -455,6 +491,12 @@ Description: This document creates a patient registration form.
             maxlength="30"
             required
             title="Please re-enter your password"
+            onblur= "confirmPassword()"
+            oninput= "confirmPassword()"
+            onfocus= "confirmPassword()"
+            />
+          </br>
+          <span class="error" id="password2-error"></span>
           </td>
         </tr>
 
@@ -464,11 +506,29 @@ Description: This document creates a patient registration form.
             <input type="submit" name="submit" id="submit" style="font-family: Helvetica, sans-serif, monospace;">
             &nbsp;&nbsp;&nbsp; <!--spaces-->
             <input type="reset" name="reset" id="reset" style="font-family: Helvetica, sans-serif, monospace;">
+            &nbsp;&nbsp;&nbsp;
+            <input type="button" name="review" id="review" value="Review" style="font-family: 'optima', sans-serif;" onclick="reviewInput()"> 
           </center>
           </td>
         </tr>
       </table>
     </div>
+  <!--New-->
+  <div class="pass-message">
+    <span id="msg1"></span> <br/>
+    <span id="msg2"></span> <br/>
+    <span id="msg3"></span> <br/>
+    <span id="msg4"></span> <br/>
+    <span id="msg5"></span> <br/>
+    <span id="msg6"></span> <br/>
+    <span id="msg7"></span> <br/>
+    <span id="password2-error"></span> <br/>
+  </div>
+  <!--New-->
+    <center>
+    <p id="showInput"></p>
+    </center>
+    
   </center>
 </form>
     
